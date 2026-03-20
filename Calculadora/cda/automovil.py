@@ -1,22 +1,9 @@
-class ColasVehiculo: 
-    
-    def agregar_vehiculo(self, marca: str, modelo: str, anio: int, tipo: str):
-        vehiculo = None
-        if tipo == "Motocicleta":
-            vehiculo = Motocicleta(marca, modelo, anio)
-        elif tipo == "Automovil":
-            vehiculo = Automovil(marca, modelo, anio)
+from .vehiculo import Vehiculo
 
-        # poner su logica maravillosa
+class Automovil(Vehiculo):
+    tipo = "Automovil"
+    def __init__(self, marca: str, modelo: str, anio: int):
+        super().__init__(marca, modelo, anio, self.tipo)
 
-    def despachar_vehiculo(self):
-        # poner su logica maravillosa
-        pass
-
-    def mostrar_vehiculos(self):
-        # poner su logica maravillosa
-        pass
-
-
-
-  
+    def mostrar_informacion(self) -> str:
+        return f"{super().mostrar_informacion()}"

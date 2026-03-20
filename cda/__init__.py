@@ -1,1 +1,0 @@
-from .colas_vehiculo import ColasVehiculo
